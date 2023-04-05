@@ -10,6 +10,12 @@ import Config
 config :shine_guide,
   ecto_repos: [ShineGuide.Repo]
 
+# Configures the repo
+config :api, Api.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id],
+  migration_timestamps: [type: :timestamptz]
+
 # Configures the endpoint
 config :shine_guide, ShineGuideWeb.Endpoint,
   url: [host: "localhost"],

@@ -32,3 +32,5 @@ shine_guide-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore env files
+/.env

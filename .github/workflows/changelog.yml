@@ -1,0 +1,22 @@
+name: "Update changelog"
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.github_token }}
+          skip-version-file: 'true'
+          skip-tag: 'true'
+          git-message: 'chore: update changelog'
+          skip-ci: 'false'
+          git-user-name: 'github'
